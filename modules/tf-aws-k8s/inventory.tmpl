@@ -1,0 +1,10 @@
+master:
+    hosts:
+        ${master}:
+    vars:
+        kubernetes_role: "master"
+nodes:
+    hosts: %{ for ip in nodes }
+        ${ip}:%{ endfor }
+    vars:
+        kubernetes_role: "node"

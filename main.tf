@@ -8,7 +8,9 @@ module "k8s-cluster" {
   ami = "ami-02a3447be1ec3a38f"
   instance = "t2.micro"
   nodes = 2
+  ssh_user = "ubuntu"
   ssh_public_key = "~/devel/keys/k8s-cluster.pub"
+  ssh_private_key = "~/devel/keys/k8s-cluster"
   ext_sg_ids = [aws_security_group.k8s-sg.id]
 }
 

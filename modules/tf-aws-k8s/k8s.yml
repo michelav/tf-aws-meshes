@@ -1,0 +1,10 @@
+- hosts: all
+
+  vars:
+    kubernetes_allow_pods_on_master: true
+    kubernetes_enable_web_ui: false
+    kubernetes_web_ui_manifest_file: https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
+  roles:
+    - geerlingguy.docker
+    # - geerlingguy.kubernetes
